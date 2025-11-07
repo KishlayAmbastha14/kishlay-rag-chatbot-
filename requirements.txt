@@ -1,0 +1,40 @@
+langchain
+ipykernel
+langchain_community
+python-dotenv
+pypdf
+bs4
+
+# 
+
+langchain-text-splitters
+
+## modles
+langchain-groq
+langchain-huggingface
+# sentence-transformers
+# transformers
+
+transformers==4.38.2
+sentence-transformers==2.6.1
+torch==2.2.2
+torchvision==0.17.2
+torchaudio==2.2.2
+
+langchain-google-genai
+google-generativeai
+
+# VECTORSTORE DB
+chromadb  # OR langchain_chroma
+langchain_chroma
+faiss-cpu
+streamlit
+langchain_core
+
+#  arxiv for loading any typpes of research paper
+duckdb
+pymupdf
+arxiv
+wikipedia
+
+jq
