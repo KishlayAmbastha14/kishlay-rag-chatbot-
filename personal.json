@@ -1,0 +1,43 @@
+{
+  "name": "Kishlay Kumar",
+  "location": "Patna, India",
+  "age": "21",
+  "degree": "B.Tech in Computer Science Engineering",
+  "college": "TECHNO INDIA UNIVERSITY, KOLKATA",
+  "education": {
+    "10th": {"school": "Bishop Scott Boys School", "marks": "81%"},
+    "12th": {"school": "St. Anne's High School", "marks": "80%"},
+    "graduation": {"degree": "B.Tech in Computer Science Engineering", "college": "Techno India University, Kolkata", "semester": "7th"}
+    
+  },
+  "skills": ["Python", "C++", "SQL", "Excel", "Machine Learning", "Deep Learning (Keras)", "Generative AI", "NLP", "FastAPI", "GitHub", "n8n"],
+  "projects": [
+    {"name": "AI Tourism Chatbot", "domain": "Generative AI + RAG", "tech_stack": ["LangChain", "FAISS", "Google embeddings"]},
+    {"name": "WhatsApp Chat Analyzer", "domain": "Data Analysis", "tech_stack": ["Streamlit"]},
+    {"name": "Flight Price Prediction", "domain": "Machine Learning – Regression", "tech_stack": ["Python", "Scikit-Learn"]},
+    {"name": "Fake News Detector & Spam Classifier", "domain": "NLP", "tech_stack": ["Python", "ML/NLP"]},
+    {"name": "Handwritten Digit Classifier", "domain": "Deep Learning – CNN", "tech_stack": ["Keras"]},
+    {"name": "Next Word Predictor & Sentiment Analysis", "domain": "Deep Learning – RNN/LSTM", "tech_stack": ["Keras"]}
+  ],
+  "top_projects": ["AI Tourism Chatbot", "WhatsApp Chat Analyzer", "Flight Price Prediction"],
+  "career_goal": "Data Scientist and AI Engineer",
+  "contact": {
+    "email": "kishlaykumar078@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/kishlay-kumar-270356300/",
+    "github": "https://github.com/KishlayAmbastha14"
+  },
+  "hobbies": ["Reading tech blogs", "Playing chess", "Solving coding problems"],
+  "quote": "Code is like humor. When you have to explain it, it’s bad.",
+  "internship_experience": "Data Science Intern – built ML models for business predictions",
+  "achievements": [
+    "Solved 200+ coding problems on LeetCode and Codeforces",
+    "Implemented multiple AI/ML projects such as Diabetes Prediction, AI Therapist Chatbot, and AI Tourism Chatbot"
+  ],
+  "web_dev_skills": ["FastAPI", "HTML", "CSS", "JavaScript"],
+  "personal_Info" : [{
+    "name": "Kishlay Kumar",
+    "age": "21",
+    "college": "XYZ University",
+    "degree": "B.Tech in Computer Science"
+  }]
+}

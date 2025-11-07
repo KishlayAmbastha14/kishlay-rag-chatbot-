@@ -1,0 +1,35 @@
+About Me:
+My name is Kishlay Kumar. I am a Computer Science Engineering student with a strong interest in Artificial Intelligence, Machine Learning, and Generative AI.
+
+Major Projects:
+1. AI Tourism Chatbot (Generative AI + LangChain + RAG):
+- Built an intelligent chatbot capable of answering user queries about Indian tourism and culture.
+- Used LangChain, FAISS vector database, and Google embeddings for retrieval-augmented generation (RAG).
+- Integrated memory storage for personalized and contextual responses.
+
+2. WhatsApp Chat Analyzer (Data Analysis + Streamlit):
+- Designed a data analysis app where users can upload exported WhatsApp chats.
+- Implemented natural language and frequency analysis to display insights such as top contacts, active hours, and message statistics.
+- Created interactive dashboards with Streamlit.
+
+3. Flight Price Prediction (Machine Learning – Regression):
+- Built a regression model to predict flight prices based on features like airline, departure/arrival time, duration, and stops.
+- Applied data preprocessing, feature engineering, and hyperparameter tuning.
+- Achieved good performance in predicting real-world ticket costs.
+
+Additional Projects:
+- Fake News Detector & Spam Classifier (NLP)
+- Handwritten Digit Classifier (CNN)
+- Next Word Predictor & Sentiment Analysis (RNN/LSTM)
+
+Career Goals:
+I want to become a Data Scientist and AI Engineer.
+
+Hobbies:
+Reading tech blogs, playing chess, and solving coding problems.
+
+Favorite Quote:
+"Code is like humor. When you have to explain it, it’s bad."
+
+Resume & Portfolio:
+You can download my resume from my portfolio website. GitHub: "https://github.com/KishlayAmbastha14", LinkedIn: "https://www.linkedin.com/in/kishlay-kumar-270356300/"
