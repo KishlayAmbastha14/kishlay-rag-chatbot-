@@ -1,40 +1,28 @@
-langchain
-ipykernel
-langchain_community
-python-dotenv
-pypdf
-bs4
+# ---------- Core ----------
+streamlit==1.29.0
+python-dotenv==1.0.0
+langchain==0.3.27
+langchain-core==0.3.76
+langchain-community==0.3.29
+langchain-text-splitters==0.0.7
 
-# 
+# ---------- LLM Connectors ----------
+langchain-groq==0.0.11
+langchain-huggingface==0.0.20
 
-langchain-text-splitters
-
-## modles
-langchain-groq
-langchain-huggingface
-# sentence-transformers
-# transformers
-
-transformers==4.38.2
+# ---------- Embeddings & Vectorstore ----------
 sentence-transformers==2.6.1
+transformers==4.38.2
 torch==2.2.2
 torchvision==0.17.2
 torchaudio==2.2.2
+faiss-cpu==1.8.7
 
-langchain-google-genai
-google-generativeai
-
-# VECTORSTORE DB
-chromadb  # OR langchain_chroma
-langchain_chroma
-faiss-cpu
-streamlit
-langchain_core
-
-#  arxiv for loading any typpes of research paper
-duckdb
-pymupdf
-arxiv
-wikipedia
-
-jq
+# ---------- Data Loading ----------
+pypdf==3.11.0
+# bs4==0.0.1
+# duckdb==0.7.2
+# pymupdf==1.23.1
+# arxiv==1.4.6
+# wikipedia==1.4.0
+# jq==1.6

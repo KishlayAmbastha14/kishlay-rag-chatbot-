@@ -30,7 +30,9 @@ llm = ChatGroq(model="openai/gpt-oss-120b",groq_api_key=groq_api_key)
 embeddings = HuggingFaceEmbeddings(model_name = "sentence-transformers/paraphrase-MiniLM-L3-v2")
 
 # VECTOR_DIR = "kishlay_vectorestore"
-VECTOR_DIR = r"C:\Users\kishl\OneDrive\Desktop\GEN\PERSONAL_CHATBOT\kishlay_vectorestore"
+# VECTOR_DIR = r"C:\Users\kishl\OneDrive\Desktop\GEN\PERSONAL_CHATBOT\kishlay_vectorestore"
+VECTOR_DIR = "kishlay_vectorestore"
+
 VECTOR_PATH = os.path.join(VECTOR_DIR,"index.faiss")
 
 
