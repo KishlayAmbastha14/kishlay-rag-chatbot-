@@ -111,7 +111,21 @@ chain = create_retrieval_chain(retriever,documents_chain)
 # )
 
 # retriever = vector_db.as_retriever(search_type="similarity", search_kwargs={"k":3})
+st.set_page_config(page_title="Kishlay AI", page_icon="🤖", layout="centered")
 
+st.title("💬 Kishlay AI Chatbot")
+st.markdown(
+    """
+    Meet **Kishlay AI** — your personal assistant trained on Kishlay Kumar’s work, skills, and experiences.
+    Ask me anything about Kishlay’s:
+    - Projects  
+    - College & Education  
+    - Technical Skills (ML, Gen AI, MLOps, etc.)  
+    - Career goals and achievements  
+    - Or just have a friendly chat!
+    """
+)
+st.divider()
 input_text = st.text_input("enter anything you want to ask about kishlay")
 submit = st.button("Submit")
 
