@@ -137,10 +137,10 @@ if submit:
     response = chain.invoke({"input":input_text},)
     if "answer" in response:
       st.write(response["answer"])
-      print(response['answer'])
+      # print(response['answer'])
     else:
       st.write(response["result"])
-      print(response['result'])
+      # print(response['result'])
 
 
 
