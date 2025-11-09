@@ -109,40 +109,36 @@ chain = create_retrieval_chain(retriever,documents_chain)
 #     llm=llm,
 #     retriever=vector_db.as_retriever(search_kwargs={"k": 3})
 # )
+ # -------------------- Streamlit UI --------------------
 
-# retriever = vector_db.as_retriever(search_type="similarity", search_kwargs={"k":3})
+
 st.set_page_config(page_title="Kishlay AI", page_icon="🤖", layout="centered")
 
 st.title("💬 Kishlay AI Chatbot")
-st.markdown(
-    """
-    Meet **Kishlay AI** — your personal assistant trained on Kishlay Kumar’s work, skills, and experiences.
-    Ask me anything about Kishlay’s:
-    - Projects  
-    - College & Education  
-    - Technical Skills (ML, Gen AI, MLOps, etc.)  
-    - Career goals and achievements  
-    - Or just have a friendly chat!
-    """
-)
+st.markdown("""
+Meet **Kishlay AI** — your personal assistant trained on Kishlay Kumar’s work, skills, and experiences.  
+Ask me anything about:
+- Projects  
+- Education & College  
+- Technical Skills (ML, Gen AI, MLOps, etc/)  
+- Career goals or achievements  
+- Or just chat casually!
+""")
 st.divider()
-input_text = st.text_input("enter anything you want to ask about kishlay")
-submit = st.button("Submit")
+
+input_text = st.text_input("💭 Ask me anything about Kishlay:")
+submit = st.button("✨ Ask Kishlay")
 
 if submit:
-  if input_text.strip() == "":
-    st.warning("enter questions to ask")
-
-  else:
-    response = chain.invoke({"input":input_text},)
-    if "answer" in response:
-      st.write(response["answer"])
-      # print(response['answer'])
+    if input_text.strip() == "":
+        st.warning("⚠️ Please enter a question before submitting.")
     else:
-      st.write(response["result"])
-      # print(response['result'])
-
-
-
-# response = qa_chain.invoke("what is your college name?")
-# print(response['result'])
+        with st.spinner("🧠 Kishlay is thinking..."):
+            try:
+                response = chain.invoke({"input": input_text})
+                if "answer" in response:
+                    st.success(response["answer"])
+                else:
+                    st.success(response.get("result", "Hmm, I couldn’t find an answer for that."))
+            except Exception as e:
+                st.error(f"❌ Error: {str(e)}")
