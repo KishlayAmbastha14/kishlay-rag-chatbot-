@@ -27,7 +27,7 @@ os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
 # ==================== LLM and Embeddings ============
 llm = ChatGroq(model="openai/gpt-oss-120b",groq_api_key=groq_api_key)
-embeddings = HuggingFaceEmbeddings(model_name = "sentence-transformers/paraphrase-MiniLM-L3-v2")
+embeddings = HuggingFaceEmbeddings(model_name = "sentence-transformers/paraphrase-MiniLM-L3-v2",model_kwargs={'device':'cpu'})
 
 # VECTOR_DIR = "kishlay_vectorestore"
 # VECTOR_DIR = r"C:\Users\kishl\OneDrive\Desktop\GEN\PERSONAL_CHATBOT\kishlay_vectorestore"
