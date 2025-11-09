@@ -2,9 +2,9 @@
 streamlit==1.29.0
 python-dotenv==1.0.0
 langchain==0.3.10
-langchain-core==0.3.46
+langchain-core==0.3.70
 langchain-community==0.3.10
-langchain-text-splitters==0.3.5
+langchain-text-splitters==0.3.10
 
 # ---------- LLM Connectors ----------
 langchain-groq==0.3.0
