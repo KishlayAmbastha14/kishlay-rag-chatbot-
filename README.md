@@ -1,5 +1,45 @@
-# 🧠 Kishlay — AI Personal Chatbot (Built with Streamlit + LangChain)
-###   🤖 A friendly, intelligent AI chatbot that represents Kishlay Kumar — built with LangChain, Groq LLM, FAISS, and Streamlit.
+# 💬 Kishlay AI — Personal Chatbot
+
+Meet **Kishlay AI**, a personalized chatbot that speaks just like *Kishlay Kumar*!  
+It understands his background, projects, skills, and experiences — giving natural, friendly, and context-aware responses.
+
+🚀 **Live App:** [Click to Open on Streamlit](https://your-streamlit-link-here)
+
+---
+
+## 🧠 Features
+
+- 🗣️ **Conversational AI:** Answers naturally like Kishlay Kumar  
+- 🔍 **RAG (Retrieval-Augmented Generation):** Uses personal data (text, JSON, PDF)  
+- ⚙️ **FAISS Vector Store:** Enables fast and semantic retrieval  
+- 🧩 **Groq LLM Integration:** Uses `ChatGroq` for fast and efficient inference  
+- 🔤 **Hugging Face Embeddings:** Encodes knowledge base into embeddings  
+- 🧾 **Streamlit UI:** Clean, interactive chat interface  
+- 🌀 **Spinner Effect:** “Kishlay is thinking...” animation for cool UX  
+
+---
+
+## 🏗️ Tech Stack
+
+| Category | Tools Used |
+|-----------|-------------|
+| Framework | Streamlit |
+| LLM | Groq (`ChatGroq`) |
+| Embeddings | Hugging Face Sentence Transformers |
+| Vector Store | FAISS |
+| Data Sources | `.txt`, `.json`, `.pdf` |
+| Chain Logic | LangChain (Retrieval Chain + Prompt Templates) |
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/your-username/kishlay-ai-chatbot.git
+cd kishlay-ai-chatbot
+
+```
 
 
 ## 📜 Overview
@@ -9,6 +49,7 @@
 - It uses Retrieval-Augmented Generation (RAG) — combining large-language-model reasoning with document-based knowledge to answer queries naturally and accurately.
 
 - The chatbot is deployed via Streamlit for a clean and interactive UI and powered by a FAISS vector store for fast document retrieval.
+  
 
 ## ⚙️ Features
 
@@ -29,23 +70,6 @@
 - ✔ Local Vector Persistence — FAISS index saved for instant reloads.
 
 
-## 🧩 Tech Stack
-
-**Component**   	   **Technology**
-
-- Frontend -----------        UI	Streamlit
-
-- Backend Logic  ---------- 	Python + LangChain
-
-- LLM Model	Groq ---------   (OpenAI GPT-OSS-120B)
-
-- Embeddings	   -----------   HuggingFace MiniLM L3 v2
-
-- Vector Store	 ----------    FAISS
-
-- Document Loaders	--------- TXT · JSON · PDF
-
-- Environment Mgmt  ---------	 dotenv (.env for API keys)
 
 ## 📁 Project Structure
 ``` bash
