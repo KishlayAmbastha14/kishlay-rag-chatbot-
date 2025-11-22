@@ -1,4 +1,3 @@
-import streamlit as st
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.document_loaders import TextLoader
 from langchain_community.document_loaders import JSONLoader
@@ -14,7 +13,6 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.chains import ConversationalRetrievalChain
 from langchain.chains import ConversationalRetrievalChain
 from langchain_huggingface import HuggingFaceEmbeddings
-import streamlit as st
 from dotenv import load_dotenv
 import os
 from fastapi import FastAPI
