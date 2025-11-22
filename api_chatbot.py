@@ -1,4 +1,5 @@
-from langchain.prompts import ChatPromptTemplate
+# from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.document_loaders import TextLoader
 from langchain_community.document_loaders import JSONLoader
 from langchain_community.document_loaders import PyPDFLoader
