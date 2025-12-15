@@ -10,7 +10,8 @@ from langchain_community.vectorstores import FAISS
 # from langchain.chains import RetrievalQA
 from langchain_groq import ChatGroq
 # from langchain.memory.buffer import ConversationBufferMemory
-from langchain_core.memory import ConversationBufferMemory
+# from langchain_core.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemory
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain.chains import ConversationalRetrievalChain
