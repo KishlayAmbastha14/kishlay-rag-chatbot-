@@ -5,12 +5,8 @@ from langchain_community.document_loaders import JSONLoader
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-# from langchain.chains.combine_documents import create_stuff_documents_chain
-# from langchain.chains import create_retrieval_chain
-# from langchain.chains import RetrievalQA
+
 from langchain_groq import ChatGroq
-# from langchain.memory.buffer import ConversationBufferMemory
-# from langchain_core.memory import ConversationBufferMemory
 from langchain.memory import ConversationBufferMemory
 
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
@@ -44,11 +40,17 @@ os.environ["HUGGINGFACEHUB_API_TOKEN"] = os.getenv("HUGGINGFACEHUB_API_TOKEN")
 
 # ==================== LLM and Embeddings ============
 llm = ChatGroq(model="openai/gpt-oss-120b",groq_api_key=groq_api_key)
+# print(llm)
+# exit()
+
 embeddings = HuggingFaceEmbeddings(model_name = "sentence-transformers/paraphrase-MiniLM-L3-v2")
 
 # VECTOR_DIR = "kishlay_vectorestore"
-VECTOR_DIR = r"C:\Users\kishl\OneDrive\Desktop\GEN\PERSONAL_CHATBOT\kishlay_vectorestore"
-VECTOR_PATH = os.path.join(VECTOR_DIR,"index.faiss")
+# VECTOR_DIR = r"C:\Users\kishl\OneDrive\Desktop\GEN\PERSONAL_CHATBOT\kishlay_vectorestore"
+# VECTOR_PATH = os.path.join(VECTOR_DIR,"index.faiss")
+
+VECTOR_DIR = "kishlay_vectorestore"
+VECTOR_PATH = os.path.join(VECTOR_DIR, "index.faiss")
 
 
 def get_vectorstore():
@@ -84,43 +86,60 @@ def get_vectorstore():
 
 vector_db = get_vectorstore()
 
-prompt = ChatPromptTemplate.from_template("""
-You are 'Kishlay AI' — a friendly, confident, and professional AI version of Kishlay Kumar.
-
-Your role:
-- Speak naturally, like Kishlay explaining his own work.
-- Always answer in a conversational, human tone — never like a report or documentation.
-- Keep responses concise (about 4–5 sentences maximum).
-- Never use tables, markdown tables, or structured columns.
-- Use simple paragraphs or short bullet points if needed.
-- Focus on clarity, natural flow, and friendly explanations.
-- When asked about projects or skills, summarize briefly (purpose, tools, and what was learned).
-- Do not list unnecessary technical details unless explicitly asked.
-- If the user asks about multiple things, list them clearly in bullet or sentence form — never as a table.
-- If you are not sure, reply with: "I'm not sure about that yet, but Kishlay can tell you more!"
-
-<context>
-{context}
-</context>
-
-User Question: {question}
-""")
 
 
+_vector_db = None
+chain = None
 
-memory = ConversationBufferMemory(
-    memory_key="chat_history",
-    return_messages=True
-)
+def get_chain():
+    global _vector_db, chain
 
-retriever = vector_db.as_retriever()
+    if chain is not None:
+        return chain
 
-chain = ConversationalRetrievalChain.from_llm(
-    llm=llm,
-    retriever=retriever,
-    memory=memory,
-    combine_docs_chain_kwargs={"prompt": prompt}
-)
+    _vector_db = get_vectorstore()
+
+    retriever = _vector_db.as_retriever()
+
+    prompt = ChatPromptTemplate.from_template(
+        """
+      You are 'Kishlay AI' — a friendly, confident, and professional AI version of Kishlay Kumar.
+
+      Your role:
+      - Speak naturally, like Kishlay explaining his own work.
+      - Always answer in a conversational, human tone — never like a report or documentation.
+      - Keep responses concise (about 4–5 sentences maximum).
+      - Never use tables, markdown tables, or structured columns.
+      - Use simple paragraphs or short bullet points if needed.
+      - Focus on clarity, natural flow, and friendly explanations.
+      - When asked about projects or skills, summarize briefly (purpose, tools, and what was learned).
+      - Do not list unnecessary technical details unless explicitly asked.
+      - If the user asks about multiple things, list them clearly in bullet or sentence form — never as a table.
+      - If you are not sure, reply with: "I'm not sure about that yet, but Kishlay can tell you more!"
+
+      <context>
+      {context}
+      </context>
+
+      User Question: {question}
+     """)
+
+
+    memory = ConversationBufferMemory(
+      memory_key="chat_history",
+      return_messages=True
+    )
+
+# retriever = vector_db.as_retriever()
+
+    chain = ConversationalRetrievalChain.from_llm(
+      llm=llm,
+      retriever=retriever,
+      memory=memory,
+      combine_docs_chain_kwargs={"prompt": prompt}
+    )
+    return chain
+
 
 
 
@@ -131,6 +150,10 @@ async def hlo():
 
 @app.post("/chatbot")
 async def kishlay_chatbot(res:Response):
+  chain = get_chain()
   user_input = res.message
   result = chain.invoke({'question':user_input})
   return {'answer':result["answer"]}
+
+
+
